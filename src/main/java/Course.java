@@ -26,7 +26,7 @@ public class Course {
     private Integer studentsCount;
     private int price;
     @OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "course")
-    private Purchaselist purchaselist;
+    private StudentCourse studentCourse;
     @Column(name = "price_per_hour")
     private float pricePerHour;
 

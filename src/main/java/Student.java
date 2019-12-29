@@ -11,12 +11,17 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "student")
-    private List<Purchaselist> purchaselist;
+    @OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "student")
+    private StudentCourse studentCourse;
     private String name;
     private int age;
     @Column(name = "registration_date")
     private Date registrationDate;
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    @JoinTable(name = "student_course",
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    private List<Course> courses;
 
 
 

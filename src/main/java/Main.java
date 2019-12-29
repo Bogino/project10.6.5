@@ -24,9 +24,6 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        String hql = "insert into purchaselist (student_id) select students.id from students";
-
-        session.createQuery(hql);
 
         transaction.commit();
         session.close();
