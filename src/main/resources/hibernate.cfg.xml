@@ -7,7 +7,7 @@
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/skillbox?useUnicode=true&amp;serverTimezone=UTC&amp;useSSL=false</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">8708Bogino</property>
+        <property name="connection.password">testtest</property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">10</property>
         <!-- Select our SQL dialect -->
@@ -17,11 +17,13 @@
         <!-- Set the current session context -->
         <property name="current_session_context_class">thread</property>
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <mapping class="Course"></mapping>
         <mapping class="Student"></mapping>
         <mapping class="Teacher"></mapping>
+        <mapping class="Purchaselist"></mapping>
+
 
 
 

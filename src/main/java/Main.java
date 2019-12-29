@@ -6,6 +6,12 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.xml.validation.Schema;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,10 +23,15 @@ public class Main {
 
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Course course = session.get(Course.class, 5);
-        course.getStudents().forEach(student -> System.out.println(student.getRegistrationDate()));
-        session.save(course);
+
+        String hql = "insert into purchaselist (student_id) select students.id from students";
+
+        session.createQuery(hql);
+
         transaction.commit();
+        session.close();
+
+
         sessionFactory.close();
 
     }
