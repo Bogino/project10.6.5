@@ -23,8 +23,8 @@
         <mapping class="Student"></mapping>
         <mapping class="Teacher"></mapping>
         <mapping class="StudentCourse"></mapping>
-        <mapping class="StudentCourseKey"></mapping>
 
-        
+
+
     </session-factory>
 </hibernate-configuration>

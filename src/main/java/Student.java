@@ -11,8 +11,6 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @OneToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, mappedBy = "student")
-    private StudentCourse studentCourse;
     private String name;
     private int age;
     @Column(name = "registration_date")
