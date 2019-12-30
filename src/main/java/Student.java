@@ -17,7 +17,7 @@ public class Student {
     private int age;
     @Column(name = "registration_date")
     private Date registrationDate;
-    @ManyToMany(cascade = CascadeType.REFRESH)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "student_course",
             joinColumns = {@JoinColumn(name = "course_id")},
             inverseJoinColumns = {@JoinColumn(name = "student_id")})
